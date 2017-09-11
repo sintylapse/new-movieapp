@@ -12,7 +12,6 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.reactnativenavigation.NavigationApplication;
 import com.BV.LinearGradient.LinearGradientPackage;
-import com.lugg.ReactNativeConfig.ReactNativeConfigPackage;
 import com.facebook.soloader.SoLoader;
 
 import java.util.Arrays;
@@ -43,8 +42,7 @@ public class MainApplication extends NavigationApplication {
   public List<ReactPackage> createAdditionalReactPackages() {
     return Arrays.<ReactPackage>asList(
 		new VectorIconsPackage(),
-		new LinearGradientPackage(),
-		new ReactNativeConfigPackage()
+		new LinearGradientPackage()
     );
   }
 

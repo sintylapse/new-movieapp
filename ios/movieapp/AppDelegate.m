@@ -11,7 +11,6 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-#import "ReactNativeConfig.h"
 #import "RCCManager.h"
 
 @implementation AppDelegate
@@ -21,7 +20,6 @@
   NSURL *jsCodeLocation;
 
   // rn-config
-  NSDictionary *config = [ReactNativeConfig env];
   // jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
   #ifdef DEBUG
     //  jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.bundle?platform=ios&dev=true"];
