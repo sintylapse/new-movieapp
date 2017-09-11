@@ -159,6 +159,9 @@ class Movie extends Component {
 		if (this.state.tab === 1) height = this.state.castsTabHeight;
 		if (this.state.tab === 2) height = this.state.trailersTabHeight;
 
+		// HACK: fix floating menu
+		// height = 700
+
 		return (
 			this.state.isLoading ? <View style={styles.progressBar}><ProgressBar /></View> :
 			<ScrollView
@@ -177,7 +180,8 @@ class Movie extends Component {
 							progressBackgroundColor="white"
 						/>
 					}>
-				<View style={{ height }}>
+				{/* <View style={{ height }}>	 */}
+				<View>
 					<Swiper
 						style={styles.swiper}
 						autoplay
@@ -217,19 +221,11 @@ class Movie extends Component {
 						</View>
 					</View>
 					<View style={styles.contentContainer}>
-						<ScrollableTabView
-							onChangeTab={this._onChangeTab}
-							renderTabBar={() => (
-								<DefaultTabBar
-									textStyle={styles.textStyle}
-									underlineStyle={styles.underlineStyle}
-									style={styles.tabBar}
-								/>
-							)}>
-							<Info tabLabel="INFO" info={info} />
-							<Casts tabLabel="CASTS" info={info} getTabHeight={this._getTabHeight} />
-							<Trailers tabLabel="TRAILERS" youtubeVideos={this.state.youtubeVideos} openYoutube={this._openYoutube} getTabHeight={this._getTabHeight} />
-						</ScrollableTabView>
+						<Info info={info} />
+						<View style = {{justifyContent: 'center', flex: 1, flexDirection: 'row'}}>
+							<Text style={[styles.cardTitle, {fontSize: 16}]}>CASTS</Text>
+						</View>
+						<Casts info={info} getTabHeight={this._getTabHeight} />
 					</View>
 				</View>
 			</ScrollView>
